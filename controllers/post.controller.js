@@ -14,7 +14,7 @@ exports.post_create = function (req, res, next) {
     })
 };
 exports.post_details = function (req, res, next) {
-    Post.findById(req.params.id, function (err, post) {
+    Post.find({}, function (err, post) {
         if (err) return next(err);
         res.send(post);
     })
